@@ -1,3 +1,0 @@
-Use this to get access to the fonts used in the design.
-
-<link rel="stylesheet" href="https://use.typekit.net/zyv7ruz.css">
