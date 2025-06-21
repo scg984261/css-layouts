@@ -252,6 +252,30 @@
   }
 }
 
+/* Layout - Pies page */
+/* 1 column when on narrow mobile view */
+.pies-list > .section-grid {
+  /* Grid auto-rows sets the implicit height of any rows created by the grid system. */
+  grid-auto-rows: 10em;
+}
+
+@media (width >= 450px) {
+  .pies-list > .section-grid {
+    grid-auto-rows: 15em;
+  }
+
+  .pie {
+    /* Make a pie box span 6 out of 12 columns, to effectively create 2 columns. */
+    grid-column: span 6;
+  }
+}
+
+@media(width >= 650px) {
+  .pie {
+    grid-column: span 4
+  }
+}
+
 /* LAYOUT - Visit us page */
 /* Make images appear side by side by giving them a fixed number of columns. */
 .about-us__image-small-1,
