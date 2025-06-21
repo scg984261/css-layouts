@@ -7,7 +7,6 @@
   border: 1px solid black;
 }
 
-
 /* Layout */
 .max-width {
   width: 100%;
@@ -124,7 +123,7 @@
   display: none;
 }
 
-/* But it should instead appear in he main block */
+/* But it should instead appear in the main block */
 .main > .home-about {
   display: block;
 }
