@@ -117,6 +117,10 @@
 
 /* LAYOUT - Home Page */
 
+.site-hero {
+    height: 300px;
+}
+
 .site-hero__heading {
     position: absolute;
     left: -10000px;
@@ -177,16 +181,6 @@
 }
 
 @media (width >= 600px) {
-    .site-hero__slogan {
-        grid-row: 1 / 2;
-    }
-
-    .site-hero .home-about {
-        display: block;
-        grid-column: 8 / 13;
-        grid-row: 1 / 3;
-    }
-
     .main > .home-about {
         display: none;
     }
@@ -217,6 +211,11 @@
         grid-row: 3 / 4;
     }
 
+    .home-pies__text-1,
+    .home-pies__text-2 {
+        grid-column: span 6;
+    }
+
     .home-pies__cta-button {
         grid-column: 6 / -6;
     }
@@ -234,6 +233,22 @@
 
     .home-visit__cta-button {
         grid-column: 6 / -6;
+    }
+}
+
+@media (width >= 920px) {
+    .site-hero {
+        height: inherit;
+    }
+    
+    .site-hero__slogan {
+        grid-row: 1 / 2;
+    }
+
+    .site-hero .home-about {
+        display: block;
+        grid-column: 8 / 13;
+        grid-row: 1 / 3;
     }
 }
 
@@ -279,6 +294,7 @@
     .pie {
         grid-column: span 4;
     }
+
 }
 
 
@@ -334,6 +350,12 @@ p {
     margin-bottom: 1rem;
 }
 
+li a {
+    color: white;
+    text-decoration: none;
+    font-family: avory-i-latin, sans-serif;
+}
+
 /* components */
 img {
     max-width: 100%;
@@ -343,7 +365,174 @@ img {
     background: #ebebeb;
 }
 
+.global-header {
+    background: #003531;
+}
+
+.global-nav__logo img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.global-nav__links ul {
+    display: flex;
+    justify-content: end;
+    gap: 1.5em;
+}
+
+.global-nav__links {
+    margin: auto 0;
+}
+
+/* Global footer styles */
+.global-footer {
+    background: black;
+}
+
+.global-footer__copyright {
+    margin: 0 auto;
+    color: white;
+}
+
+.global-footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+@media (width >= 600px) {
+    .global-footer__links {
+        flex-direction: row;
+        flex-direction: column;
+    }
+}
+
 /* Components - about page */
 .about-shop {
     background: #ebebeb;
+}
+
+/* Components - Visit us page */
+
+.visit-us__text {
+    margin: 0 auto;
+}
+
+/* Components - home page */
+.site-hero {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 33%, transparent 33%, transparent 100%), url("../img/hero-image.png");
+    background-size: cover;
+}
+
+.site-hero__slogan {
+    color: white;
+    justify-self: center;
+    font-size: 1.1rem;
+}
+
+.cta-button {
+    background-color: #457779;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: "avory-i-latin", sans-serif;
+    font-weight: 800;
+    font-size: 0.8em;
+    padding: 0.75em 0;
+    border-radius: 0.75em;
+    filter: drop-shadow(0 6px black);
+    margin: 1.5em 0;
+}
+
+.home-about {
+    background-color: white;
+}
+
+.home-about {
+    height: 100%;
+    background-size: cover;
+}
+
+.home-pies {
+    background-color: #ebebeb;
+}
+
+.home-pies img {
+    height: 100%;
+    background-size: cover;
+}
+
+.home-visit__address h3,
+.home-visit__hours h3 {
+    font-family: avory-i-latin, sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.home-visit__address p,
+.home-visit__hours p {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+
+@media (width >= 480px) {
+    .site-hero {
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 36%, transparent 36%, transparent 100%), url("../img/hero-image.png");
+    }
+    
+    .site-hero__slogan {
+        font-size: 1.7rem;
+    }
+}
+
+@media (width >= 600px) {
+    .site-hero {
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 40%, transparent 40%, transparent 100%), url("../img/hero-image.png");
+    }
+}
+
+@media (width >= 920px) {
+    .site-hero {
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 22%, transparent 22%, transparent 100%), url("../img/hero-image.png");
+    }
+
+    .site-hero__slogan {
+        justify-self: left;
+        font-size: 2.0rem;
+    }
+}
+
+
+/* Components - About us page */
+.about-us img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-us__address,
+.about-us__hours {
+    container: about-us-card / inline-size;
+    background: #ebebeb;
+}
+
+.about-us-card__flex {
+    display: flex;
+    padding: 1em;
+}
+
+.about-us-card__flex h3 {
+    flex-basis: 50%;
+}
+
+.about-us-card__flex p {
+    margin-bottom: 0;
+}
+
+@container about-us-card (width < 275px) {
+    .about-us-card__flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
