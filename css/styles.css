@@ -275,16 +275,7 @@
 
 
 /* LAYOUT - Pies Page */
-
-.pies-list > .section-grid {
-    /* grid-auto-rows: 10em; */
-}
-
 @media (width >= 450px) {
-    .pies-list > .section-grid {
-        /* grid-auto-rows: 25em; */
-    }
-
     .pie {
         grid-column: span 6;
     }
@@ -570,7 +561,9 @@ img {
 
 .pie-grid {
     display: grid;
+    padding: 1em;
     gap: 5px;
+    grid-template-rows: auto auto 5em auto;
     grid-template-areas: "name"
                          "image"
                          "description"
@@ -630,6 +623,8 @@ img {
         grid-template-areas: "image name"
                              "image description"
                              "prices description";
+        grid-template-rows: repeat(3, min-content);
+        padding: 0;
     }
 
     .pie__price {
@@ -638,5 +633,10 @@ img {
 
     .pie-grid__image {
         max-width: 130px;
+    }
+
+    .pie-grid__name,
+    .pie-grid__description {
+        padding: 0.5em;
     }
 } 
