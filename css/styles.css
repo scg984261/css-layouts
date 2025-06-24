@@ -496,6 +496,10 @@ img {
 
 
 /* Components - About us page */
+.about-us__text {
+    margin: 0 auto;
+}
+
 .about-us img {
     height: 100%;
     object-fit: cover;
