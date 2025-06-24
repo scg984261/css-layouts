@@ -277,12 +277,12 @@
 /* LAYOUT - Pies Page */
 
 .pies-list > .section-grid {
-    grid-auto-rows: 10em;
+    /* grid-auto-rows: 10em; */
 }
 
 @media (width >= 450px) {
     .pies-list > .section-grid {
-        grid-auto-rows: 25em;
+        /* grid-auto-rows: 25em; */
     }
 
     .pie {
@@ -536,3 +536,107 @@ img {
         text-align: center;
     }
 }
+
+/* Components pies page */
+
+.pies-filter__filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.filter__option {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 1em;
+    font-family: bebas-neue, sans-serif;
+    padding: 0.25em 1.5em;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.filter__option--selected {
+    background-color: black;
+    color: white;
+}
+
+.pie {
+    /* set up container for container query */
+    container: pie-card / inline-size;
+    background: #ebebeb;
+}
+
+.pie-grid {
+    display: grid;
+    gap: 5px;
+    grid-template-areas: "name"
+                         "image"
+                         "description"
+                         "prices";
+}
+
+.pie-grid__name {
+    grid-area: name;
+}
+
+.pie-grid__name h3 {
+    margin: 0;
+}
+
+.pie-grid__image {
+    grid-area: image;
+    max-width: 150px;
+    justify-self: center;
+}
+
+.pie-grid__description {
+    grid-area: description;
+}
+
+.pie-grid__description p {
+    margin-bottom: 0;
+}
+
+.pie-grid__prices {
+    grid-area: prices;
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+}
+
+.pie__price {
+    display: flex;
+    flex-direction: column;
+    background: #457779;
+    padding: 0.2em 0.4em;
+    align-items: center;
+}
+
+.price {
+    color: white;
+    font-family: avory-i-latin, sans-serif;
+    font-size: 1.4rem;
+}
+
+.product {
+    color: white;
+    font-family: bebas-neue, sans-serif;
+}
+
+@container pie-card (width >= 300px) {
+    .pie-grid {
+        grid-template-areas: "image name"
+                             "image description"
+                             "prices description";
+    }
+
+    .pie__price {
+        flex-grow: 1;
+    }
+
+    .pie-grid__image {
+        max-width: 130px;
+    }
+} 
